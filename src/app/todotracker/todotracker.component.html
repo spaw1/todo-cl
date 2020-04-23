@@ -1,0 +1,51 @@
+<div id="main">
+  <div class="center">
+    <span>
+      <button mat-stroked-button (click)="displayAdd = true" [disabled]="displayAdd">
+      <mat-icon>add</mat-icon>
+      </button>
+    </span>
+  </div>
+  <div id="input" *ngIf="displayAdd">
+    <span>
+      <span>Add description: </span>
+      <input matInput [(ngModel)]="newItemDesc">
+    </span>
+    <button mat-stroked-button color="primary"
+            (click)="addNewItem()"
+            [disabled]="!newItemDesc">Submit
+    </button>
+    <button mat-stroked-button color="primary"
+            (click)="displayAdd = false">Cancel
+    </button>
+  </div>
+
+
+  <h3>Active</h3>
+  <div class="toDoList">
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let todo of activeToDoList">
+        <td class="description">{{todo.desc}}</td>
+        <td class="clickable">
+          <span title="Mark as Complete" (click)="markItemAsComplete(todo.id)"><mat-icon>check_box</mat-icon></span>
+          <span title="Delete" (click)="deleteItem(todo.id)"><mat-icon>delete</mat-icon></span>\
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Completed</h3>
+  <div class="toDoList" *ngIf="toDoList && completedToDoList.length">
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let todo of completedToDoList">
+        <td class="description">{{todo.desc}}</td>
+        <td class="clickable">
+          <span title="Delete" (click)="deleteItem(todo.id)"><mat-icon>delete</mat-icon></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

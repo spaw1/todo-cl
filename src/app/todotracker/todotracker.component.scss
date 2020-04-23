@@ -1,0 +1,30 @@
+#main {
+  margin-left: 20px;
+}
+
+.toDoList {
+  margin-top: 30px;
+
+  button {
+    margin-left: 10px;
+  }
+
+  .eachActive {
+    margin-bottom: 10px;
+  }
+}
+
+.description {
+  min-width: 400px;
+}
+
+input {
+  margin: 0 10px;
+}
+
+#input button {
+  margin-left: 10px;
+}
+.clickable {
+  cursor: pointer;
+}
