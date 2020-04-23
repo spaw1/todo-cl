@@ -8,7 +8,7 @@
   </div>
   <div id="input" *ngIf="displayAdd">
     <span>
-      <span>Add description: </span>
+      <span>Add Todo: </span>
       <input matInput [(ngModel)]="newItemDesc">
     </span>
     <button mat-stroked-button color="primary"
@@ -29,7 +29,7 @@
         <td class="description">{{todo.desc}}</td>
         <td class="clickable">
           <span title="Mark as Complete" (click)="markItemAsComplete(todo.id)"><mat-icon>check_box</mat-icon></span>
-          <span title="Delete" (click)="deleteItem(todo.id)"><mat-icon>delete</mat-icon></span>\
+          <span title="Delete" (click)="deleteItem(todo.id)"><mat-icon>delete</mat-icon></span>
         </td>
       </tr>
       </tbody>
@@ -42,7 +42,7 @@
       <tr *ngFor="let todo of completedToDoList">
         <td class="description">{{todo.desc}}</td>
         <td class="clickable">
-          <span title="Delete" (click)="deleteItem(todo.id)"><mat-icon>delete</mat-icon></span>
+          <span style="padding-left:20px;" title="Delete" (click)="deleteItem(todo.id)"><mat-icon>delete</mat-icon></span>
         </td>
       </tr>
       </tbody>
